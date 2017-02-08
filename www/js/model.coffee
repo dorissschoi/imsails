@@ -244,8 +244,6 @@ angular.module('starter.model', ['ionic', 'PageableAR', 'util.file'])
 							return 'video'
 						else
 							return 'file'
-				else if msg.compose
-					return 'compose'
 				else
 					return 'msg'
 
@@ -253,19 +251,20 @@ angular.module('starter.model', ['ionic', 'PageableAR', 'util.file'])
 				Msg.msgType @
 
 			templateUrl: ->
-				switch @msgType()
-					when 'img'
-						"templates/chat/thumb.html"
-					when 'audio'
-						"templates/chat/audio.html"
-					when 'video'
-						"templates/chat/thumb.html"
-					when 'file'
-						"templates/chat/file.html"
-					when 'compose'
-						"templates/chat/inputText.html"
-					else
-						"templates/chat/msg.html"
+				if _.isUndefined @id
+					"templates/chat/inputText.html"
+				else
+					switch @msgType()
+						when 'img'
+							"templates/chat/thumb.html"
+						when 'audio'
+							"templates/chat/audio.html"
+						when 'video'
+							"templates/chat/thumb.html"
+						when 'file'
+							"templates/chat/file.html"
+						else
+							"templates/chat/msg.html"
 
 			$parse: (data, opts) ->
 				ret = super(data, opts)

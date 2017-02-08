@@ -4,7 +4,7 @@
 	ng-controller='msgCtrl'>
 	<ng-include src="model.templateUrl()">
 	</ng-include>
-	<div class="item item-divider" ng-if="model.compose == undefined">
+	<div class="item item-divider" >
 		<span>{{model.createdAt.toLocaleString()}}</span>
 		<span ng-if="type == 'groupchat'">{{model.from}}</span>
 	</div>

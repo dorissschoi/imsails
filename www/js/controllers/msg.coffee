@@ -77,7 +77,7 @@ angular
 			addMsg: (type, index) ->
 				$ionicTabsDelegate.select index
 				$scope.show_dialog = true 
-				$scope.collection.models.push new resource.Msg compose:true, from: me.jid
+				$scope.collection.models.push new resource.Msg from: me.jid
 			putfile: ($files) ->
 				if $files and $files.length != 0
 					attachment = new resource.Attachment type: type, to: chat.jid, local: $files[0]
