@@ -30,7 +30,7 @@
 	<ion-infinite-scroll ng-if="collection.state.skip < collection.state.count" on-infinite="loadMore()">
 	</ion-infinite-scroll>
 </ion-content>
-<ion-tabs class="tabs-icon-left">
+<ion-tabs class="tabs-icon-left" ng-hide="show_dialog" >
 	<ion-tab title="{{'Text' | translate}}"
 		icon="ion-android-textsms" 
 		ng-click="addMsg('text',0)" href="#">

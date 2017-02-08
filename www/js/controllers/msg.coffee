@@ -73,10 +73,11 @@ angular
 					$scope.row('')
 			cancel: ->
 				$scope.collection.models.pop()
+				$scope.show_dialog = false 
 			addMsg: (type, index) ->
 				$ionicTabsDelegate.select index
-				if(_.isUndefined  _.findWhere collection.models, compose:true)
-					$scope.collection.models.push new resource.Msg compose:true, from: me.jid
+				$scope.show_dialog = true 
+				$scope.collection.models.push new resource.Msg compose:true, from: me.jid
 			putfile: ($files) ->
 				if $files and $files.length != 0
 					attachment = new resource.Attachment type: type, to: chat.jid, local: $files[0]
