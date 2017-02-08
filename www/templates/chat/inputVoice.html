@@ -1,8 +1,0 @@
-<div class="card" ng-class="'left'">
-	<div class="buttons">
-		<util-audio-recorder ng-if="device.platform == 'browser'"></util-audio-recorder>
-		<button class="button" ng-click="start()" ng-controller="AudioCtrl" ng-if="device.platform == 'iOS' || device.platform == 'Android'">
-			<i class="icon ion-mic-a"></i>
-		</button>
-	</div>
-</div>

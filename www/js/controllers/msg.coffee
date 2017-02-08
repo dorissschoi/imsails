@@ -72,9 +72,7 @@ angular
 					$scope.msg = ''
 					$scope.row('')
 			cancel: ->
-				models = _.filter $scope.collection.models, (model) ->
-						_.isUndefined model.compose
-				$scope.collection.models = models
+				$scope.collection.models.pop()
 			addMsg: (type, index) ->
 				$ionicTabsDelegate.select index
 				if(_.isUndefined  _.findWhere collection.models, compose:true)
