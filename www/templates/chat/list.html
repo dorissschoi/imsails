@@ -46,10 +46,9 @@
 		disabled="show_dialog"
                 ng-click="addMsg('audio', 2)" href="#">
         </ion-tab>
-	<ion-tab title="{{'Attachment' | translate}}"
-		icon="ion-android-attach"
-		disabled="show_dialog"
-		ng-click="addMsg('file', 3)" href="#">
-	</ion-tab>
+	<label class="button tab-item" ng-disabled="show_dialog" >
+		<i class="icon ion-android-attach"></i> {{'Attachment' | translate}}
+		<input type="file" onchange="angular.element(this).scope().putfile(event.target.files)">
+	</label>
 </ion-tabs>
 

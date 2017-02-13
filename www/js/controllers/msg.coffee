@@ -75,7 +75,6 @@ angular
 				$scope.collection.models.pop()
 				$scope.show_dialog = false 
 			addMsg: (type, index) ->
-				$ionicTabsDelegate.select index
 				$scope.show_dialog = true 
 				$scope.collection.models.push new resource.Msg from: me.jid
 			putfile: ($files) ->
